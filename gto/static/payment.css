@@ -1,0 +1,132 @@
+/*.col {
+  display: block;
+  margin: 1% 0 1% 1.6%;
+}*/
+
+/* CLEARFIX */
+
+/*.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}*/
+
+/* FORM */
+
+/*.form .plan input, .form .payment-plan input, .form .payment-type input{
+  display: none;
+}
+
+.form label{
+  position: relative;
+  color: #000;
+  background-color: #aaa;
+  font-size: 26px;
+  text-align: center;
+  height: 150px;
+  line-height: 150px;
+  display: block;
+  cursor: pointer;
+  border: 3px solid transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.form .plan input:checked + label, .form .payment-plan input:checked + label, .form .payment-type input:checked + label{
+  border: 3px solid #000;
+  background-color: #fff;
+}
+
+.form .plan input:checked + label:after, form .payment-plan input:checked + label:after, .form .payment-type input:checked + label:after{
+  content: "\2713";
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 100%;
+  border: 2px solid #333;
+  background-color: #fff;
+  z-index: 999;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.submit {
+  padding: 15px 60px;
+  display: block;
+  border: none;
+  margin: 20px 0;
+  background-color:#B52D2D;
+  color: #fff;
+  border: 2px solid #333;
+  font-size: 18px;
+}
+
+.submit:hover{
+  cursor: pointer;
+  transform: rotateX(360deg);
+}
+.low_width {
+    width:500px;
+    margin: auto;
+  }
+  .bottom_text{
+    font-size: 15px;
+  }
+  .submit_{
+    margin: auto;
+      width: 50%;
+      padding: 10px;
+  }*/
+
+/*.payment-container {
+  color:white;
+  border:3px white solid;
+  text-align: center;
+}
+.internal-div-payments {
+  display:inline;
+}
+.basic-label {
+  padding:30px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+/*input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+/*input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.plan {
+  text-align: center;
+}
+.row-item {
+  margin:auto;
+}
+
+.radio-input {
+  margin:auto;
+}
+.quantity {
+  margin-top:30px;
+}*/
+
+
+.slidecontainer {
+  color:white;
+} 

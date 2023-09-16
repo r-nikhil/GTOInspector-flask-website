@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+    <style type="text/css">
+    input.razorpay-payment-button {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    }
+    input.razorpay-payment-button {
+    color:#000000;
+    background-color:#FFFFFF;
+    }
+    @media all and (max-width:30em){
+    input.razorpay-payment-button{
+    display:block;
+    margin:0.4em auto;
+    }
+
+
+    </style>
+    
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 mobile-top-fix">
+                    <div class="">
+                    </div>
+                    <div class="">
+                        <form action="charge" method="POST" style="text-align: center; border: 2px solid white; width: 60%; margin: auto; margin-top: 30px; padding-bottom:70px; border-radius: 10px;">
+                            <h3 style="color: white; text-align: center; margin-top: 50px;">
+                            <div style="margin: 20px;">
+                                {{plan_name}} | $ {{amount/100}}
+                            </div>
+                            <div style="margin: 20px;">
+                                {{purchase_description}}
+                            </div>
+                            <div style="margin: 20px; font-size: 12px;">
+                                * Extra payment charges may apply
+                            </div>
+                            </h3>
+                            <script
+                            src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key={{rzp_key}}
+                            data-amount="{{amount}}"
+                            data-name="{{plan_name}}"
+                            data-description="{{purchase_description}}"
+                            data-netbanking="true"
+                            data-description="Purchase of {{num_hands}} for {{plan_currency}} {{amount}} "
+                            data-currency="{{plan_currency}}"
+                            data-image="{{url_for('static', filename='blacklogo.png')}}"
+                            data-prefill.name="{{current_user.first_name}} {{current_user.last_name}}"
+                            data-prefill.email="{{current_user.email}}"
+                            >
+                            </script>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        var btn = document.getElementByClassName("razorpay-payment-button")[0];
+        btn.classList.add("btn btn-danger");
+    </script>
+    
+{% endblock %}

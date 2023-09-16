@@ -1,0 +1,20 @@
+<style type="text/css">
+	.black-text{
+		color:black;
+	}
+</style>
+<article class="accordion black-text">
+	<div class="accordion-head">
+		<span>{% block question %}
+			{% endblock %}</span>
+		<span class="icon">
+			<i class="icon fa fa-chevron-right"></i>
+		</span>
+	</div>
+	<div class="accordion-body">
+		<div class="content panel-heading" >
+			<p>{% block answer %}
+			{% endblock %}</p>
+		</div>
+	</div>
+</article>

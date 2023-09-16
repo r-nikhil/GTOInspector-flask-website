@@ -1,0 +1,11 @@
+{% extends 'faqs/simple_qa_template.html' %}
+{% block question %}
+	<p>
+		Why are all my hands not processed?
+	</p>
+{% endblock %}
+{% block answer %}
+	<p id="q1">
+		At the moment we only support PLO(4card) non-HU hands. Apart from non-HU hands, ranges like ‘UTG limp’ are absent in monker solutions, thus hands including those situations would not be processed. 
+	</p>
+{% endblock %}

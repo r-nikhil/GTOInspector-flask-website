@@ -1,0 +1,89 @@
+<style type="text/css">
+.tg  {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.tg td {
+	border-style:solid;
+	border-width:0px;
+		font-family:Arial,	sans-serif;
+	font-size:14px;
+	overflow:hidden;
+	padding:10px 5px;
+	word-break:normal;
+}
+.tg th {
+	border-style:solid;
+	border-width:1px;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	font-weight:normal;
+	overflow:hidden;
+	padding:10px 5px;
+	word-break:normal;
+}
+.tg .tg-d4us {
+	background-color:#000000;
+	border:1px solid #555;
+	border-color:inherit;
+	color:#ffffff;
+	font-family:"Arial Black", Gadget, sans-serif !important;;
+	text-align:center;
+	vertical-align:top;
+	overflow:visible;
+	padding-top:10;
+	padding-left:5;
+	padding-right:5;
+	margin:5px;
+}
+.tg .tg-uqwr{
+	background-color:#000000;
+	border-color:inherit;
+	border:1px solid #555;
+	color:#ffffff;
+	font-family:"Arial Black", Gadget, sans-serif !important;;
+	font-weight:bold;
+	text-align:center;
+	vertical-align:center;
+}
+.card-image {
+	width:100px;
+}
+</style>
+<table id="tg-y5hQu" class="tg">
+	<thead>
+		<tr>
+			<th class="tg-uqwr">Pairedness</th>
+			<th class="tg-uqwr">Suitedness</th>
+			<th class="tg-uqwr">Category</th>
+			<th class="tg-uqwr">Ranges</th>
+			<th class="tg-uqwr">Examples</th>
+			<th class="tg-uqwr">Examples</th>
+			<th class="tg-uqwr">Examples</th>
+			<th class="tg-uqwr">Examples</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for i in range(76) %}
+			<tr>
+				<td class="tg-d4us">{{pairs[i]}}</td>
+				<td class="tg-d4us">{{suits[i]}}</td>
+				<td class="tg-d4us">{{cat[i]}}</td>
+				<td class="tg-d4us">{{ranges[i]}}</td>
+				<td class="tg-d4us">
+					<img class='card-image' src="/static/images/cards/{{q[i]}}.png">
+				</td>
+				<td class="tg-d4us">
+					<img class='card-image' src="/static/images/cards/{{w[i]}}.png">
+				</td>
+				<td class="tg-d4us">
+					<img class='card-image' src="/static/images/cards/{{e[i]}}.png">
+				</td>
+				<td class="tg-d4us">
+					<img class='card-image' src="/static/images/cards/{{''.join(r[i][:8])}}.png">
+				</td>
+				
+			</tr>
+			{%endfor%}
+		</tbody>
+	</table>

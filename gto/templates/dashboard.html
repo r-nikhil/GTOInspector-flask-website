@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='profile.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='login.css')}}">
+
+<section class="section" id="about">
+	<div class='row'>
+		<div class="container col-md-1 col-lg-1 col-sm-12">
+		</div>
+		<div class=" container col-md-6 col-lg-6 col-sm-12 signup_form mobile-top-fix">
+			<div class=" text-center-white left-heading col-lg-12 col-md-12 col-sm-12 mobile-top-fix">
+				<h5 class='col-lg-12 col-md-12 col-sm-12 mobile-top-fix' style="margin-bottom: 10px;">
+					General Information
+				</h5>
+			</div>
+			<div class="row">
+				<div class='col-lg-2 col-md-2 col-sm-12 mobile-top-fix'>
+				</div>
+				<div class='col-lg-10 col-md-10 col-sm-12 mobile-top-fix'>
+					<p>
+						You are logged in as {{user.name}}
+					</p>
+					<p>
+						Your registered email is {{user.email}}
+					</p>
+					<p>
+						You have {{user.hands_remaining}} hand analysis left.
+					</p>
+					{% if current_user.is_confirmed %}
+					<p>
+						<button style="width:50%;" class="btn btn-success" onclick="redir()">
+							Your email is confirmed. Upload HH
+						</button>
+
+					</p>
+					<p>
+						<button style="width:50%;" class="btn btn-success" onclick="redir_pricing()">
+							Purchase more hands
+						</button>
+					</p>
+					{% else %}
+					<form method="POST" action="{{url_for('send_confirm_link')}}" style="margin-left:0;">
+						<p>
+							{{ confirm_email_form.hidden_tag() }}
+							{{ confirm_email_form.confirm_email(id="confirm_email", class="btn btn-danger") }}
+						</p>
+					</form>
+					{% endif %}
+				</div>
+			</div>
+			<div class=" text-center-white left-heading col-lg-12 col-md-12 col-sm-12 mobile-top-fix">
+				<h5 class='col-lg-12 col-md-12 col-sm-12 mobile-top-fix' style="margin-bottom: 10px;">
+					Hero Names
+				</h5>
+			</div>
+			<div class="row">
+				{% if hero_names %}
+				<div class='col-lg-2 col-md-4 col-sm-0 mobile-top-fix'>
+				</div>
+				<div class='col-lg-10 col-md-10 col-sm-12 mobile-top-fix'>
+					{% for i in hero_names %} <p> - {{i}}</p>
+					{% endfor %}
+				</div>
+				{% else %}
+				<div class='col-lg-2 col-md-2 col-sm-0 mobile-top-fix'>
+				</div>
+				<div class='col-lg-10 col-md-10 col-sm-12 mobile-top-fix'>
+					No hero name detected
+				</div>
+				{% endif %}
+			</div>
+		</div>
+		<div class="container col-md-5 col-lg-5 col-sm-12">
+			<div class="row">
+				<div class="signup_form">
+					<form method="POST" action="{{url_for('reset_password')}}">
+						{{ fingerprint_input }}
+						{{ password_change_form.hidden_tag() }}
+						<div class="left-heading">
+							<h5>Change Password</h5>
+						</div>
+						<div class="input-container text_box">
+							{{ password_change_form.current_password() }}
+							{{ password_change_form.current_password.label }}
+						</div>
+						<div class="input-container text_box">
+							{{ password_change_form.new_password(id="password") }}
+							{{ password_change_form.new_password.label }}
+						</div>
+						<div class="input-container text_box">
+							{{ password_change_form.confirm_new_password(id="confirm_password") }}
+							{{ password_change_form.confirm_new_password.label }}
+						</div>
+						<div class=''>
+							{{ password_change_form.submit(class="btn btn-danger login", id='submit_button') }}
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript" src="{{url_for('static', filename='hide.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='password.js')}}"></script>
+<script type="text/javascript">
+	function redir() {
+		window.location.replace('{{url_for("hand_history")}}');
+	};
+	function redir_pricing() {
+		window.location.replace('{{url_for("select_plan")}}');
+	};
+</script>
+</div>
+{% endblock %}

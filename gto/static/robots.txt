@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gtoinspector.poker/sitemap.xml

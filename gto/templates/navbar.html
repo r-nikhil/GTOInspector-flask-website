@@ -1,0 +1,56 @@
+<header class="header-area header-sticky background-header">
+    <style type="text/css">
+        sup {
+            font-size: 9px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" id="logo" class="logo"><img src="{{url_for('static', filename='logo.png')}}" alt="logo"
+                            style="margin-left:-100px; width:70px;">GTO Inspector<sup style="font-size:9px;">
+                            BETA</sup></a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        {% if current_user.is_authenticated %}
+                        <li class="scroll-to-section"><a href="/pricing">Hands:{{current_user.processing_balance}}</a>
+                        </li>
+                        <li class="scroll-to-section"><a href="/upload">Upload</a></li>
+                        <li class="scroll-to-section"><a href="/previous_uploads">Previous Uploads</a></li>
+                        <li class="scroll-to-section"><a href="/tutorial">Tutorial</a></li>
+                        <li class="scroll-to-section"><a href="/payment_history">Transaction History</a></li>
+                        <li class="scroll-to-section"><a href="/pricing">Pricing</a></li>
+                        <li class="scroll-to-section"><a href="/dashboard">Profile</a></li>
+                        <li class="scroll-to-section"><a href="/logout">Logout</a></li>
+
+                        {% else %}
+                        <li class="scroll-to-section"><a href="/tutorial">Tutorial</a></li>
+                        <li class="scroll-to-section"><a href="/pricing">Pricing</a></li>
+                        <li class="submenu">
+                            <a href="javascript:;">Explore</a>
+                            <ul id="dropdown">
+                                <li><a href="/#overplay">Overplay and underplay</a></li>
+                                <li><a href="/#pie_charts">Position Analysis</a></li>
+                                <li><a href="/#table">Raw Data Analysis</a></li>
+                                <li><a href="/#line">GTO vs Non GTO Results Graph</a></li>
+                            </ul>
+                        </li>
+                        <li class="scroll-to-section"><a href="/signup">Sign Up</a></li>
+                        <li class="scroll-to-section"><a href="/login">Login</a></li>
+
+                        {% endif %}
+
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

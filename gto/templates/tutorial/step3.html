@@ -1,0 +1,135 @@
+{% extends 'tutorial/tutorial-template.html' %}
+{% block stepName %}
+	<div>
+		
+	</div>
+{% endblock %}
+{% block stepDetails %}
+	<section class="section" id="about2">
+		<div class="container">
+			<div id = "op_of" class="row">
+
+				<div class="left-text col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix">
+					<div class="left-heading">
+						<h5 style="font-size: xx-large;">
+							Understanding Overplay/Underplay
+						</h5>
+						<p><a href="/faqs#op_of">What is Overplay and Underplay?</a></p>
+						<p>○ When the GTO move for a particular spot is a  fold and the hero decides to raise/call the hand is termed as overplayed.</p>
+						<p>○ When the GTO move for a particular spot is call/raise and the hero decides to fold the hand is termed as underplayed.
+						</p>
+						<p>○ We filter out the top 5 hand categories sorted by maximum EV loss to identify the biggest leaks in the game. The list of hand categories is dynamic and is dependent on the filters chosen. The hand categories are also clickable and they act as filters for the bottom table.
+						</p>
+						<p>○ The “Number of Hands” counter displays the total number of hands for the particular filter. “EV difference” is the loss in EV due to misplaying hands corresponding to the filters. “Amount Won(BB)” is the actual BB’s won by playing those filtered hands.
+							</p>
+							</div>
+						</div>
+						<div class="right-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+							<img src="/static/screenshots/overplay_overfold.png" alt="Step 3-a">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="hr"></div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="container" id="filters">
+					<div class="row">
+						<div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+							<img src="/static/images/tutorial-images/step3b.png" class="rounded img-fluid d-block mx-auto" alt="Step 3-b">
+						</div>
+						<div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix" >
+							<div class="left-heading">
+								<h5>
+								Example on using filters:
+								</h5>
+								<p>
+									○ Here is a spot showing the dashboard filtered by BU RFI mistakes</p>
+								<p>
+									○ This shows that there were 3650 BU RFI opportunities in the uploaded file, that the hero played 711 of those wrongly, has won a total of 1425 BB RFI’ing BU and has faced an EV loss of 2.2BB/100 due to misplaying that spot.
+								</p>
+								<p>
+									○ The top categories which were overplayed and overfolded are displayed as well. These categories also act as filters for the bottom table.
+								</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="hr"></div>
+					</div>
+				</div>
+				<div class="container" >
+					<div class="row">
+						<div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+							<div class="left-heading">
+								<h5>
+								Example on filtering by hand category:
+								</h5>
+								<p>
+									○ If we see here, we filterted out BB 3bet/call 2bet mistakes and we see that “Double paired single suited KKxx-TTxx-KKQQ-TT22” hand category is losing us the most money(EV loss). 
+								</p>
+								<p>
+									○ The Hero has lost at a rate of 62.7 BB/100 and almost 1018 BB in total. On filtering that particular hand category we can see the actual hands on the bottom table.
+								</p>
+								</div>
+							</div>
+								
+							<div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+									<img src="/static/images/tutorial-images/step3c.png" alt="Steo 3-c" style="width: 100%;">
+							</div>
+						</div>
+					</div>
+
+
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="hr"></div>
+							</div>
+						</div>
+						<div class="container" id="gtovsnongto">
+							<div class="row">
+								<div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+									<img src="/static/screenshots/line_chart.png" class="rounded img-fluid d-block mx-auto" alt="Step 3-d">
+								</div>
+								<div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+									<div class="left-heading">
+										<h5>GTO vs Non GTO EV Analysis Graph</h5>
+										<p>
+											○ GTO EV win rate is the sum of Monker EVs for all the preflop situations you have faced in the uploaded sample averaged per 100 hands. (This number is not result oriented, your actual P/L for the hand doesn't affect this number). In the long run if you play the hands you were dealt in an exact GTO manner(both preflop + postflop) this is the EV you would generate. 
+
+										</p>
+										<p>
+											○ My BB won: It is the sum of BB won in processed hands. This is further segregated into GTO (Correct) and Non GTO (Incorrect) decisions made by you preflop. These numbers are result oriented as you can sometimes see the hero winning money by taking Non-GTO decisions preflop
+										</p>
+										<p style="text-indent: 40px;">
+											My BB won(Correct): Amount (in BBs) won/lost by playing GTO preflop in the uploaded hand sample
+											</p>
+											<p style="text-indent: 40px;">
+											My BB won(Incorrect); Amount (in BBs) won/lost by playing non-GTO preflop in the uploaded hand sample
+										</p>
+										<p >
+											○ However, in a big enough sample we have personally observed Non GTO decisions to be losing money always.This is mathematical proof to the fact that playing non-GTO doesn't make money in big sample sizes. 
+										</p>
+										<p>
+											○ My BB/100: Your results averaged per 100 hands. Its another representation of your “My BB won” number
+										</p>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="hr"></div>
+							</div>
+						</div>
+					</section>
+				{% endblock %}

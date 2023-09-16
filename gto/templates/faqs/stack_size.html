@@ -1,0 +1,25 @@
+{% extends 'faqs/simple_qa_template.html' %}
+{% block question %}
+	<p>
+		Won’t the GTO solution depend on the stack size of the hero?
+	</p>
+{% endblock %}
+{% block answer %}
+	<div id="q8">
+		Correct. Our program intelligently refers to different solution databases for different hero stacks. To simplify we have made the following assumptions w.r.t to hero stack.
+		<ul>
+			<li>
+				Hero stack <40BB =  Referred with 30BB PLO ranges
+			</li>
+			<li>
+				Hero stack <60BB = Referred with 50BB PLO ranges
+			</li>
+			<li>
+				Hero stack <120BB = Referred with 100BB PLO ranges
+			</li>
+			<li>
+				Hero stack >175BB and above = Referred with 200BB PLO ranges
+			</li>
+		</ul>
+	</div>
+{% endblock %}

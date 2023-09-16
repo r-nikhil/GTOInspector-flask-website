@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}<!-- 
+	<style type="text/css">
+		.container {
+			width:90%;
+			margin-left:auto;
+		}
+	</style> -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='profile.css')}}">
+	<h1 class="title"></h1>
+	<section class="section" id="frequently-question">
+		<div class="container">
+			<!-- ***** Section Title Start ***** -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-heading">
+						<h2>Frequently Asked Questions</h2>
+					</div>
+				</div>
+				
+			</div>
+			<!-- ***** Section Title End ***** -->
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div id="accordion" class="accordions">
+						<div>
+						{% include 'faqs/all_not_processed.html' %}
+						</div>
+						<div>
+						{% include 'faqs/hand_categories.html' %}
+						</div>
+						<div>
+						{% include 'faqs/multiple_files.html' %}
+						</div>
+						<div>
+						{% include 'faqs/op_of.html' %}
+						</div>
+						<div>
+						{% include 'faqs/rake_structure.html' %}
+						</div>
+						<div>
+						{% include 'faqs/stack_size.html' %}
+						</div>
+						<div>
+						{% include 'faqs/gto_inaccuracy.html' %}
+						</div>
+						<div>
+						{% include 'faqs/termslink.html' %}
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

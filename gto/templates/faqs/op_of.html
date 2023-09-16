@@ -1,0 +1,51 @@
+{% extends 'faqs/simple_qa_template.html' %}
+{% block question %}
+	<p >
+		What is overplaying or underplaying?
+	</p>
+{% endblock %}
+{% block answer %}
+	<div id="op_of">
+		Whenever the GTO move and Hero move are different for a particular spot, the hand is categorised as either an Overplayed or Underplayed mistake. The table below explains when the hand is categorised as Overplayed or Underplayed:
+		<br>
+		<style type="text/css">
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{border-color:black;border-style:solid;border-width:1px;font-size:14px;
+		overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-size:14px;
+		font-weight:bold;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg .tg-cly1{text-align:left;vertical-align:middle}
+		</style>
+		<table class="tg">
+			<thead>
+				<tr>
+					<th class="tg-cly1">GTO Move</th>
+					<th class="tg-cly1">Hero Move</th>
+					<th class="tg-cly1">Conclusion</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tg-cly1">Call</td>
+					<td class="tg-cly1">Fold</td>
+					<td class="tg-cly1">Underplay</td>
+				</tr>
+				<tr>
+					<td class="tg-cly1">Call</td>
+					<td class="tg-cly1">3bet</td>
+					<td class="tg-cly1">Overplay</td>
+				</tr>
+				<tr>
+					<td class="tg-cly1">3bet</td>
+					<td class="tg-cly1">Call/Fold</td>
+					<td class="tg-cly1">Underplay</td>
+				</tr>
+				<tr>
+					<td class="tg-cly1">Fold</td>
+					<td class="tg-cly1">Call/3bet</td>
+					<td class="tg-cly1">Overplay</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

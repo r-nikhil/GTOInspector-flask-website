@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% block content %}
+<style type="text/css">
+	/* The sidebar menu */
+	.sidenav {
+	  height: 100%; /* Full-height: remove this if you want "auto" height */
+	  width: 200px; /* Set the width of the sidebar */
+	  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+	  z-index: 1; /* Stay on top */
+	  top: 0; /* Stay at the top */
+	  left: 0;
+	  background-color: #111; /* Black */
+	  overflow-x: hidden; /* Disable horizontal scroll */
+	  padding-top: 100px;
+	}
+
+	/* The navigation menu links */
+	.sidenav a {
+	  padding: 6px 8px 6px 16px;
+	  text-decoration: none;
+	  font-size: 25px;
+	  color: #818181;
+	  display: block;
+	}
+
+	/* When you mouse over the navigation links, change their color */
+	.sidenav a:hover {
+	  color: #f1f1f1;
+	}
+
+	/* Style page content */
+	body {
+	  margin-left: 200px; /* Same as the width of the sidebar */
+	  padding: 0px 10px;
+	}
+	.sidebar .closebtn {
+	  position: absolute;
+	  top: 0;
+	  right: 25px;
+	  font-size: 36px;
+	  margin-left: 50px;
+	}
+
+	/* The button used to open the sidebar */
+	.openbtn {
+	  font-size: 20px;
+	  cursor: pointer;
+	  background-color: #111;
+	  color: white;
+	  padding: 10px 15px;
+	  border: none;
+	}
+
+	.openbtn:hover {
+	  background-color: #444;
+	}
+	/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+	@media screen and (max-height: 450px) {
+	  .sidenav {padding-top: 15px;}
+	  .sidenav a {font-size: 18px;}
+	}
+</style>
+	<section class="section main" id="about">
+		<button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+		<div class="sidenav" id="sidebar">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		  <a href="{{url_for('admin_console', access_key='SOMEKEY')}}">Admin Panel</a>
+		  <a href="{{url_for('couponinfopage')}}">Coupons</a>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class=" col-lg-6 col-md-6 col-sm-12 mobile-top-fix">
+					<div class="signup_form ">
+						<div style='color:white;text-align: center;'>
+							<div style='margin-bottom:10px;margin-top:10px;'>
+								ADD
+								<form action="{{ url_for('add_coupon')}}" method="POST">
+									{{ addcouponform.hidden_tag() }}
+									{{ addcouponform.coupon }}
+									{{ addcouponform.coupon.label }}
+									<br>
+									{{ addcouponform.hands }}
+									{{ addcouponform.hands.label }}
+									<br>
+									{{ addcouponform.submit(class_="btn btn-info")}}
+								</form>
+							</div>
+							<hr style="border:0.5px white solid;">
+							<div style='margin-bottom:10px;margin-top:10px;'>
+								REMOVE
+								<form action="{{ url_for('remove_coupon')}}" method="POST">
+									{{ removecouponform.hidden_tag() }}
+									{{ removecouponform.coupon }}
+									{{ removecouponform.coupon.label }}
+									<br>
+									{{ removecouponform.submit(class_="btn btn-danger")}}
+								</form>
+							</div>
+							<hr style="border:0.5px white solid;">
+							<div style='margin-bottom:10px;margin-top:10px;'>
+								CHANGE STATUS
+								<form action="{{ url_for('change_coupon')}}" method="POST">
+									{{ enable_disable_form.hidden_tag() }}
+									{{ enable_disable_form.coupon }}
+									{{ enable_disable_form.coupon.label }}
+									<br>
+									{{ enable_disable_form.status }}
+									<br>
+									{{ enable_disable_form.submit(class_="btn btn-danger")}}
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class=" col-lg-3 col-md-3 col-sm-6 mobile-top-fix">
+					<div>
+						<h3>Active coupons</h3>
+						<table >
+							<tr>
+								<th>
+									Coupon
+								</th>
+								<th>
+									Hands
+								</th>
+							</tr>
+							{% for c in range(active|count) %}
+								<tr>
+									<td>
+										{{active[c][0]}}
+									</td>
+									<td>
+										{{active[c][1]}}
+									</td>
+								</tr>
+							{% endfor %}
+						</table>
+						<h3>Inactive coupons</h3>
+						<table>
+							<tr>
+								<th>
+									Coupon
+								</th>
+								<th>
+									Hands
+								</th>
+							</tr>
+							{% for c in range(inactive|count) %}
+								<tr>
+									<td>
+										{{inactive[c][0]}}
+									</td>
+									<td>
+										{{inactive[c][1]}}
+									</td>
+								</tr>
+							{% endfor %}
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="hr"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		function openNav() {
+		  document.getElementById("sidebar").style.width = "200px";
+		  document.getElementsByTagName("body")[0].style.marginLeft = "200px"; 
+
+		}
+
+		/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+		function closeNav() {
+		  document.getElementById("sidebar").style.width = "0";
+		  document.getElementsByTagName("body")[0].style.marginLeft = "0"; 
+		}
+	</script>
+{% endblock %}

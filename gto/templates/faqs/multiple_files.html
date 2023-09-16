@@ -1,0 +1,11 @@
+{% extends 'faqs/simple_qa_template.html' %}
+{% block question %}
+	<p>
+		What if I upload multiple files at the same time?
+	</p>
+{% endblock %}
+{% block answer %}
+	<p id="q5">
+		We process files sequentially for every user. If you have enough hands remaining in your account, all your files would be processed and shown as a single report. If you don’t have enough hands remaining in your account, we would process only the first ‘x’ hands where x is the hands remaining in your account at the start of processing.
+	</p>
+{% endblock %}

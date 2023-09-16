@@ -1,0 +1,46 @@
+/*for overall form*/
+#prev_upload_list{
+    color: white;
+    padding: auto;
+    width: 60% ;
+    margin: auto;
+
+}
+
+/*for particular list*/
+.level_1{
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.prev_upload_button  a{
+    color: white;
+}
+
+.padding_below {
+    padding-bottom: 3px;
+}
+/*payment history */
+
+#payment_hist_items{
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 60% ;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+
+#transaction_title{
+    color: white;
+    width: fit-content;
+    margin: auto;
+    margin-top:40px;
+    margin-bottom: 30px;
+}

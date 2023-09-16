@@ -1,0 +1,10 @@
+{
+    "SQL_DATABASE_URI": "postgresql://postgres:1awd2sef3drg4fth@localhost:5432/test",
+    "FILE_UPLOAD_PATH": "C:\\Users\\Animesh\\Desktop\\uploaddir",
+    "SECRET_KEY": "6e1a4889abc60821768806e7040bfa5206a848d3f83354473f3f80ac79e0397e",
+    "SECURITY_PASSWORD_SALT": "fbc2e5796a5d75fe95ed8ff30aa0f02a548d2f08c8fcd160f5419c4af355df0d",
+    "RAZORPAY_KEY": "nfsn",
+    "RAZORPAY_SECRET": "sfdinsfho",
+    "AWS_CLIENT_SECRET": "RCKkqhSYaGoiwDRCfENRjpmGM/jIPFe90yxux7GN",
+    "AWS_CLIENT_KEY": "AKIAJUJVBXDOPU56DIBA"
+}

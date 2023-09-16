@@ -1,0 +1,92 @@
+/*This file contains customised css for
+both login and signup pages*/
+
+.text_box{
+    color: white;
+}   
+:root{
+  --grad-1:var(--very-dark-blue);
+}
+
+.login{
+    margin-bottom: 30px;
+}
+
+.signup_form{
+    background:background: -moz-linear-gradient(
+    -45deg,
+    var(--grad-1) 0%,
+    var(--grad-1) 0%,
+    var(--grad-1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right bottom,
+    color-stop(0%,var(--grad-1)),
+    color-stop(0%,var(--grad-1)),
+    color-stop(100%, var(--grad-1))
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    var(--grad-1) 0%,
+    var(--grad-1) 0%,
+    var(--grad-1) 100%
+  );
+  background: -o-linear-gradient(
+    -45deg,
+    var(--grad-1) 0%,
+    var(--grad-1) 0%,
+    var(--grad-1) 100%
+  );
+  background: -ms-linear-gradient(
+    -45deg,
+    var(--grad-1) 0%,
+    var(--grad-1) 0%,
+    var(--grad-1) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    var(--grad-1) 0%,
+    var(--grad-1) 0%,
+    var(--grad-1) 100%
+  );
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup_form form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.signup_form #submit{
+    color: white;
+    background-color: #B52D2D ;
+    border: none;
+    border-radius: 3px;
+   
+    width: 30%;
+    height: 40px;
+    min-width: fit-content;
+    margin-top: 50px;
+  
+  }
+.submit-box {
+    width:30%;
+}
+
+#val_message {
+    font-size:15px;
+    color:#e5494c;
+}
+
+#feedback-content {
+  outline: none;
+  overflow:auto;
+  resize:none;
+  width: 100%;
+  border:none;
+  border-bottom:0.5px white solid;
+}

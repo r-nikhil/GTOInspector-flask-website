@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://gtoinspector.poker/</loc>
+	<lastmod>2020-12-07T21:53:02+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://gtoinspector.poker/tutorial</loc>
+	<lastmod>2020-12-07T21:53:02+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://gtoinspector.poker/signup</loc>
+	<lastmod>2020-12-07T21:53:05+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://gtoinspector.poker/login</loc>
+	<lastmod>2020-12-07T21:53:05+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://gtoinspector.poker/terms</loc>
+	<lastmod>2020-12-07T21:53:05+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://gtoinspector.poker/privacy</loc>
+	<lastmod>2020-12-07T21:53:06+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://gtoinspector.poker/forgot</loc>
+	<lastmod>2020-12-07T21:53:08+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+</urlset>

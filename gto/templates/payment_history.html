@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+	<style type="text/css">
+			ul {
+				padding-left:20px;
+				padding-bottom: 10px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='previous_uploads.css') }}">
+		<section class="section" id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 mobile-top-fix">
+						<div class="">
+							<h1 style="color: white;
+							display: flex;
+							justify-content: center;
+							margin-bottom: 30px;
+							margin-top: 30px;"> Transaction History</h1>
+						</div>
+						<div class="">
+							{% if payments %}
+							<div class = "main_container">
+								{% for item in payments[::-1] %}
+									<h6 id = "payment_hist_items">
+									{{item.amount|int /100}}
+									{{item.plan_currency}} | {{item.payment_time}} |
+									{{item.payment_id[5:]}}
+									</h6>
+									
+								{% endfor %}
+							</div>
+							{% else %}
+							<h3 style="color: white; text-align: center; margin-top: 50px;">You have no previous transactions.</h3>
+						{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="hr"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		
+		
+	
+	{%endblock%}

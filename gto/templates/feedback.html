@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+	<section class="section" id="contact-us">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- ***** Contact Form Start ***** -->
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="contact-form" style="margin-top:10px;">
+							<h1>
+								Write to Us
+							</h1>
+							<h4>
+								We will get back to you within 24 hours!
+							</h4>
+						<form style="margin-top:80px;" id="contact" method="post">
+							<div class="row">
+								<div class="col-md-6 col-sm-12">
+									<fieldset>
+										<input id="" placeholder="Name" name="name" required type="text" value="">
+									</fieldset>
+								</div>
+								<div class="col-md-6 col-sm-12">
+									<fieldset>
+										<input id="" placeholder="Email" name="email" required type="text" value="">
+									</fieldset>
+								</div>
+								<div class="col-lg-12">
+									<fieldset>
+										<textarea id="feedback-content" required="required" name='feedback-content' rows=8 placeholder="What do you wanna say?"></textarea>
+									</fieldset>
+								</div>
+								<div class="col-lg-12">
+									<fieldset>
+										<input style="color:white;" class="btn btn-info login" id="submit_button" name="submit" type="submit" value="Send">
+									</fieldset>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- ***** Contact Form End ***** -->
+			</div>
+			<div class="row" style="margin-top:10px;margin-bottom:10px;">
+				<div class="col-lg-2 col-md-2 col-sm-12">
+					
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<h2>	
+					Prefer to mail us? Mail us <a href="mailto:gtoinspector.poker@gmail.com">here.</a>
+					</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='login.css')}}">
+	
+	<script type="text/javascript">
+		$('#feedback-content').autoResize();
+	</script>
+	
+{% endblock %}

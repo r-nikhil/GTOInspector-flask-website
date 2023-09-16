@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{%block content %}
+<style type="text/css">
+	iframe {
+		background: #1d2936;
+		min-width: 100%;
+		min-height:1800px;
+		margin-left:auto;
+	}
+</style>
+<section class="section" id="about2">
+	<div class="">
+		<div class="">
+			<iframe
+			noresize='noresize'
+			src={{ dash_url }}
+			frameborder="0"
+			>
+			</iframe>
+		</div>
+	</div>
+</section>
+{% endblock %}

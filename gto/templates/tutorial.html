@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='tut.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='profile.css')}}">
+	<style type="text/css">
+        .youtube {
+            width:600px;
+            height: 400px;
+        }
+        @media (max-width: 1079px) {
+            .youtube {
+                width: 300px; 
+                padding-top:100px;
+
+            }
+        } 
+    </style>
+	<section class="section" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+					<iframe src="https://www.youtube.com/embed/VdmHds-lylY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="youtube"  allowfullscreen></iframe>
+				</div>
+				<div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+					<div class="left-heading">
+						<h5>Please watch this 3 minute video tutorial to get started.</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div id="step1" name="step1">{% include 'tutorial/step1.html' %}</div>
+	<div id="step2" name="step2">{% include 'tutorial/step2.html' %}</div>
+	<div id="step3" name="step3">{% include 'tutorial/step3.html' %}</div>
+	
+<script type="text/javascript" src="{{url_for('static', filename='hide.js')}}"></script>
+{% endblock %}

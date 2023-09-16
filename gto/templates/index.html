@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='home.css')}}"> -->
+    <style type="text/css">
+        .youtube {
+            width:120%; height:100%;
+        }
+        @media (max-width: 1079px) {
+            .youtube {
+                width: 70%; height: 100%;
+                margin-top:30px;
+            }
+        } 
+    </style>
+    <div class="welcome-area" id="welcome">
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                        <h1> {{ data }} </h1>
+                        <p> Find out if your preflop PLO game is GTO approved and fix your leaks at lightning speed. Supports PokerStars, GG Poker and Adda52 Hand History.
+                        </p>
+                            <a href="/#overplay" class="main-button .tut-button">Discover More</a>
+                            {% if not current_user.is_authenticated %}
+                            <a href="/signup" class="main-button .signup-button">Sign-up</a>
+                            {% endif %}
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                       
+                        <iframe src="https://www.youtube.com/embed/VdmHds-lylY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="youtube"  allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <section class="section" id="about">
+        <div class="container" id="overplay">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="static/screenshots/overplay_overfold.png" class="rounded img-fluid d-block mx-auto" alt="Overplay and underplay" style="height:500px;">
+                </div>
+                <div class="right-text col-lg-2 col-md-12 col-sm-12 mobile-top-fix">    </div>
+                <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+                    <div class="left-heading" id="left-heading">
+                        <h5>Overplay and underplay</h5>
+                    </div>
+                    <div class="left-text">
+                        <ul>
+                            <li>○ Club hands into <a href="/faqs#hand_category">hand category</a> buckets</li>
+                            <li>
+                               ○ Split hand category buckets into
+                                overplay and underplay
+                            </li>
+                            <li>
+                               ○ Filter hands for a particular position * opportunity and identify highest EV loss spots. 
+                            </li>
+                            <li>
+                                ○ Example: Find amount won/lost from BTN while 3betting / calling 2bets while deviating from GTO
+                            </li>
+                            <li>
+                                <a href="/tutorial#op_of">
+                                What is overplay and underplay?
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="height:1px; background-color: black;">
+    </div>
+    <section class="section" id="about2">
+        <div class="container" id="pie_charts">
+            <div class="row">
+                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h5>Interactive Pie Charts</h5>
+                    </div>
+                    <div class="left-text">
+                        <ul>
+                            <li>
+                                ○ Visualize Preflop mistakes at a glance at position * opportunity level
+                            </li>
+                            <li>
+                              ○ See the percentage of the times you misplayed a particular spot and the resultant EV Loss 
+                            </li>
+                            <li>
+                              ○ Example: Hero has misplyed 14% of the hands from CO for the 3bet/call 2bet opportunity
+                            </li>
+                            <li><a href="/tutorial#filters">
+                                How do I read the pie charts?
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <img src="/static/screenshots/pie_charts.png" class="rounded img-fluid d-block mx-auto" alt="Pie Charts">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="height:1px; background-color: black;">
+    </div>
+    <section class="section" id="about" style="margin-bottom:-200px;">
+        <div class="container" id="table">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="static/screenshots/table.png" class="rounded img-fluid d-block mx-auto" alt="Table">
+                </div>
+                <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+                    <div class="left-heading" id="left-heading">
+                        <h5>Raw Data Analysis</h5>
+                    </div>
+                    <div class="left-text">
+                       
+                        <ul>
+                            <li>
+                                ○ Download the processed analysis file (.csv) and locally analyse the data.
+                            </li>
+                            <li>
+                                ○ The processed hand sample data is rich with information like hand category, GTO action, stack size, GTO Move EV, Hero Move EV, EV loss etc. 
+                            </li>
+                            <li><a href="/tutorial#step3_">
+                                 What does the raw data contain?
+                            </a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="height:1px; background-color: black;">
+    </div>
+    <section class="section" id="about2">
+        <div class="container" id="line">
+            <div class="row">
+                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h5>GTO vs Non GTO EV Analysis Graph</h5>
+                    </div>
+                    <div class="left-text">
+                       
+                        <ul>
+                            <li>
+                                ○ Compare and visualise how much money you are winning/losing by deviating from GTO
+                            </li>
+                            <li>
+                                ○ We have noticed over large hand samples(>10L) that playing hands preflop in a non-GTO manner almost always results in money being lost. 
+                            </li>
+                            <li>
+                                ○ This is testament and mathematical proof to the fact that old school exploitative preflop strategies deviating from GTO dont actually make money in the long run
+                            </li>
+                            <li><a href="/tutorial#gtovsnongto">
+                                 How is GTO EV, Hero move EV, total EV calculated?
+                            </a></li>
+                        </ul>
+                </div>
+                </div>
+                <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <img src="/static/screenshots/line_chart.png" class="rounded img-fluid d-block mx-auto" alt="Line Chart">
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+/* 
+#profile_align{
+    width: 50%;
+    justify-content: center;
+    color: white;
+} */
+
+.general_info{
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.column {
+    color: white;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+  }
+
+.signup_form{
+    color: white;
+}

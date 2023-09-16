@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="jumbotron">
+		<form method="POST">
+			{{ form.hidden_tag() }}
+
+			{{ form.hand.label }} {{ form.hand }}
+			<br>
+			{{ form.submit }}
+		</form>
+		<p>
+			Number of searches left in your account = {{ searches_left }}
+		</p>
+	</div>
+{% endblock %}
+{% block search_result %}
+	<p>Here goes the search results</p>
+	{{data}}
+{% endblock %}

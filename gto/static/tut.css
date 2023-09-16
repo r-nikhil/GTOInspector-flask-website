@@ -1,0 +1,188 @@
+
+html,body{
+    background-color: rgb(26, 26, 26);
+}
+
+
+.container {
+    width:90%;
+    margin-left:auto;
+}
+
+
+
+.text_video{
+    font-family: 'Oswald', sans-serif;
+    font-size: xx-large; 
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.video{
+    width: 100%;
+    height: 57%;
+    margin-bottom: 5%;
+}
+
+iframe{
+    width: 100%;
+    height: 576px;
+
+}
+
+@media screen and (max-width: 600px){
+    iframe{
+        height: 57%;
+    }
+}
+
+#profile_align{   
+    width: 80%;
+    margin-left: auto; 
+    padding-left: 0%;
+    color: white;
+}
+
+
+
+.img-part {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border:1px white solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+/* This part includes classes for all steps */
+
+#tut-steps{
+    margin-bottom: 10%;
+}
+
+#step-2 {
+    margin-bottom: 3%;
+}
+
+#corousel{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.heading_text{
+    padding-left: 2%;
+    margin-bottom: 1%;
+}
+
+.section_a{
+    display: flex;
+    margin-top: 5%;
+}
+
+.text_a{
+    color: white;
+    padding-left: 5%;
+}
+
+.image_a{
+    width: 50%;
+}
+.img-part{
+    width: 70%;
+    height: auto;
+    margin: 0px;
+}
+
+.extra{
+    font-size: 20px;
+    background-color: rgba(3, 3, 3, 0.2);
+    margin: 5% 0px 5% 0px;
+    padding: 2% 5% 2% 5%;
+
+}   
+
+
+
+/* this is for step two */
+img.img-inline {
+    width: 15%;
+    border:1px white solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.inline-main{
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+img.img-full {
+    width: 90%;
+    border:1px white solid;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-full-text{
+    margin-top: 2%;
+    padding-right: 10%;
+}
+
+/* This part includes classes for step3 */
+
+.text_step_three{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.subtitle {
+    font-family: 'Lato', sans-serif;
+    font-weight: 200;
+    font-size: 44px;
+    margin-bottom: 0px;
+}
+
+.example-section{
+    margin-bottom: 5%;
+}
+.example-text{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+
+
+
+@media screen and (max-width: 600px){
+    .section_a{
+        flex-direction: column;
+    }
+    .heading_text{
+        margin-bottom: 3%;
+    }
+    .text_a{
+        font-size: 18px;
+        width: 100%;
+    }
+    .image_a{
+        width: 100%;
+    }
+    .img-part{
+        width: 100%;
+    }
+    .extra{
+        font-size: 14px;
+    }
+    img.img-full{
+        width: 100%;
+    }
+    .text_step_three{
+        font-size: 18px;
+    }
+}

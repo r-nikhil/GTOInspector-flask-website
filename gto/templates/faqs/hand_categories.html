@@ -1,0 +1,53 @@
+{% extends 'faqs/simple_qa_template.html' %}
+{% block question %}
+	<p>
+		What are the hand categories shown in your website?
+	</p>
+{% endblock %}
+{% block answer %}
+	<div id="q4">
+		<div class="input-container">
+				<span lang="en-US">Hand Categories:</span></p>
+				<p style="margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">We’re
+					using Tom Chamber’s classification to segregate PLO hands into 76
+				categories preflop. </span>
+			</p>
+			<p style="margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">Pairing:
+			</span>
+		</p>
+		<ul>
+			<li style='margin-left:30px;'><p style="text-align:left;margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">Unpaired:
+			No pair in hand (AKQ9)</span></p>
+			<li style='margin-left:30px;'><p style="text-align:left;margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">Paired:
+			One and only one pair in hand (AAT5)</span></p>
+			<li style='margin-left:30px;'><p style="text-align:left;margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">Double
+			Paired: Two pairs (KKTT)</span></p>
+		</ul>
+		<p style="margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">Suitedness:</span></p>
+		<ul>
+			<li style='margin-left:30px;'><p style="text-align:left;margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">Single
+			Suited: Only one suit in hand (KhTh8c9d, As8s9sTc)</span></p>
+			<li style='margin-left:30px;'><p style="text-align:left;margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">Double
+			Suited: Two suits in hand (Ts8c9s6c, KsKdQsQd)</span></p>
+			<li style='margin-left:30px;'><p style="text-align:left;margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">Rainbow:
+				No suit in hand (KsQdTc5h, 8s8d9c9h)<br/>
+			</span><br/>
+			<br/>
+		</p>
+	</ul>
+	<p style="margin-bottom: 0.11in; line-height: 108%"><span lang="en-US">Accounting
+		for connectivity, card ranks and suit ranks we have a total of 76
+	categories:</span></p>
+	<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+		<br/>
+	</p>
+	{% include 'table.html' %}
+	
+	<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+		<br/>
+	</p>
+	<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+		<br/>
+	</p>
+	</div>
+{% endblock %}

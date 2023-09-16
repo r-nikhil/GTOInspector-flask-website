@@ -1,0 +1,360 @@
+{% extends "base.html" %}
+{% block content %}
+<script>
+	var val_list = []
+	function filename(val) {
+
+		val_list.push(val);
+		document.cookie = "name" + "=" + val_list.toString();
+	}
+
+	var i = 0;
+	function showhide(id, val) {
+		var checkBox = document.getElementById(id);
+		if (checkBox.checked == true) {
+			val_list.push(val);
+			++i;
+		} else {
+			val_list.pop(val);
+			--i;
+		}
+
+		var div = document.getElementById("submit");
+		if (i >= 2) {
+			div.style.display = "block";
+		} else {
+			div.style.display = "none";
+		}
+	}
+
+	function myFunction() {
+
+		// var list = ["file1", "file2", "file3"]
+		// document.getElementById("prev_upload_list").submit();
+		document.cookie = "name" + "=" + val_list.toString();
+	}
+
+	$('document').ready(function () {
+		//console.log(date);
+		$('.s_class').click(function () {
+			var startdate = $('.sd').val();
+			var enddate = $('.ed').val();
+			//dates = [startdate, enddate]
+			//dateStr = dates.toString()
+			if (startdate != "") {
+				if (enddate != "") {
+					$.ajax({
+						type: 'POST',
+						url: '/fileQuery/',
+						data: { 'sd': startdate, 'ed': enddate },
+						success: function (filenames) {
+							if (filenames == "file not found") {
+								$("#alert").html("<div class='alert alert-danger' id='alert_box'>File was not uploaded form " + startdate + " to " + enddate + "</div>")
+							} else {
+								document.cookie = "name" + "=" + filenames;
+								window.location.href = "/handanalysis/";
+							}
+						}
+					});
+				} else {
+					$("#alert").html("<div class='alert alert-danger' id='alert_box'>Please Select End Date</div>")
+				}
+			} else {
+				$("#alert").html("<div class='alert alert-danger' id='alert_box'>Please Select Start Date</div>")
+			}
+
+		});
+
+		$('.LS_class').click(function () {
+			var d = new Date();
+
+			var month = d.getMonth() + 1;
+			var day = d.getDate();
+			var enddate = d.getFullYear() + '-' +
+				(month < 10 ? '0' : '') + month + '-' +
+				(day < 10 ? '0' : '') + day;
+
+			var days = 7;
+			var date = new Date();
+			var res = date.setTime(date.getTime() - (days * 24 * 60 * 60 * 1000));
+
+			date = new Date(res);
+
+			// hours part from the timestamp
+			var hours = date.getHours();
+
+			// minutes part from the timestamp
+			var minutes = date.getMinutes();
+
+			// seconds part from the timestamp
+			var seconds = date.getSeconds();
+
+			// will display time in 10:30:23 format
+			var formattedTime = date;
+			var month = formattedTime.getMonth() + 1;
+			var day = formattedTime.getDate();
+			var startdate = formattedTime.getFullYear() + '-' +
+				(month < 10 ? '0' : '') + month + '-' +
+				(day < 10 ? '0' : '') + day;
+
+			if (startdate != "") {
+				if (enddate != "") {
+					$.ajax({
+						type: 'POST',
+						url: '/fileQuery/',
+						data: { 'sd': startdate, 'ed': enddate },
+						success: function (filenames) {
+							if (filenames == "file not found") {
+								$("#alert").html("<div class='alert alert-danger' id='alert_box'>File was not uploaded in last 7 days</div>")
+							} else {
+								document.cookie = "name" + "=" + filenames;
+
+								window.location.href = "/handanalysis/";
+							}
+						}
+					});
+				}
+			}
+
+		});
+
+		$('.LF_class').click(function () {
+			var d = new Date();
+
+			var month = d.getMonth() + 1;
+			var day = d.getDate();
+			var enddate = d.getFullYear() + '-' +
+				(month < 10 ? '0' : '') + month + '-' +
+				(day < 10 ? '0' : '') + day;
+
+			var days = 15;
+			var date = new Date();
+			var res = date.setTime(date.getTime() - (days * 24 * 60 * 60 * 1000));
+
+			date = new Date(res);
+
+			// hours part from the timestamp
+			var hours = date.getHours();
+
+			// minutes part from the timestamp
+			var minutes = date.getMinutes();
+
+			// seconds part from the timestamp
+			var seconds = date.getSeconds();
+
+			// will display time in 10:30:23 format
+			var formattedTime = date;
+			var month = formattedTime.getMonth() + 1;
+			var day = formattedTime.getDate();
+			var startdate = formattedTime.getFullYear() + '-' +
+				(month < 10 ? '0' : '') + month + '-' +
+				(day < 10 ? '0' : '') + day;
+
+			if (startdate != "") {
+				if (enddate != "") {
+					$.ajax({
+						type: 'POST',
+						url: '/fileQuery/',
+						data: { 'sd': startdate, 'ed': enddate },
+						success: function (filenames) {
+							if (filenames == "file not found") {
+								$("#alert").html("<div class='alert alert-danger' id='alert_box'>File was not uploaded in last 15 days</div>")
+							} else {
+								document.cookie = "name" + "=" + filenames;
+								window.location.href = "/handanalysis/";
+							}
+						}
+					});
+				}
+			}
+
+		});
+
+		$('.LT_class').click(function () {
+			var d = new Date();
+
+			var month = d.getMonth() + 1;
+			var day = d.getDate();
+			var enddate = d.getFullYear() + '-' +
+				(month < 10 ? '0' : '') + month + '-' +
+				(day < 10 ? '0' : '') + day;
+
+			var days = 30;
+			var date = new Date();
+			var res = date.setTime(date.getTime() - (days * 24 * 60 * 60 * 1000));
+
+			date = new Date(res);
+
+			// hours part from the timestamp
+			var hours = date.getHours();
+
+			// minutes part from the timestamp
+			var minutes = date.getMinutes();
+
+			// seconds part from the timestamp
+			var seconds = date.getSeconds();
+
+			// will display time in 10:30:23 format
+			var formattedTime = date;
+			var month = formattedTime.getMonth() + 1;
+			var day = formattedTime.getDate();
+			var startdate = formattedTime.getFullYear() + '-' +
+				(month < 10 ? '0' : '') + month + '-' +
+				(day < 10 ? '0' : '') + day;
+
+			if (startdate != "") {
+				if (enddate != "") {
+					$.ajax({
+						type: 'POST',
+						url: '/fileQuery/',
+						data: { 'sd': startdate, 'ed': enddate },
+						success: function (filenames) {
+							if (filenames == "file not found") {
+								$("#alert").html("<div class='alert alert-danger' id='alert_box'>File was not uploaded in last 30 days</div>")
+							} else {
+								document.cookie = "name" + "=" + filenames;
+								window.location.href = "/handanalysis/";
+							}
+						}
+					});
+				}
+			}
+
+		});
+	});
+
+</script>
+
+<style type="text/css">
+	ul {
+		padding-left: 20px;
+		padding-bottom: 10px;
+	}
+</style>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='previous_uploads.css') }}">
+<section class="section" id="about">
+	<span id="alert"></span>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 mobile-top-fix">
+				<div class="">
+					<h1 style="color: white;
+							display: flex;
+							justify-content: center;
+							margin-bottom: 30px;
+							margin-top: 30px;">Upload History</h1>
+				</div>
+
+				<div style="display:flex; width:100%;">
+					<div style="flex-basis: 200px; padding: -10px;">
+						<div class="form-group row" id="submit" style="display: none;">
+							<div class="col-sm-10">
+								<!-- <button type="submit" class="btn btn-danger" onclick="myFunction()">Submit multiplefiles</button>-->
+								<a class="btn btn-danger" onclick="myFunction()" href="/handanalysis/">Submit
+									multiplefiles</a>
+							</div>
+						</div>
+						{% if prev_uploads %}
+						<div class="form-group row" style="margin-top: 30px;">
+							<label for="startdate" class="form-label" style="padding-left: 14px;">Start Date</label><br>
+							<div class="col-sm">
+								<input type="date" class="form-control sd" id="startdate" value="{{ startdate }}"
+									placeholder="Date" name="startdate" form="prev_upload_list" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="enddate" class="form-label" style="padding-left: 14px;">End Date</label><br>
+							<div class="col-sm">
+								<input type="date" class="form-control ed" id="enddate" placeholder="Date"
+									name="enddate" value="{{ enddate }}" form="prev_upload_list" />
+							</div>
+						</div>
+						<button type="button" class="btn btn-danger s_class">Submit Start-Date & End-Date</button>
+						<br>
+						<br>
+						<br>
+						<button type="button" class="btn btn-danger LS_class">Check for Last Seven Days</button>
+						<br>
+						<br>
+						<button type="button" class="btn btn-danger LF_class">Check for Last Fifteen Days</button>
+						<br>
+						<br>
+						<button type="button" class="btn btn-danger LT_class">Check for Last Thirty Days</button>
+						{% endif %}
+					</div>
+
+					{% if prev_uploads %}
+					<div style="flex-basis: 1000px; margin-left: 0px; padding-left: -40px;">
+						<form method="POST" id="prev_upload_list" action="/handanalysis/" style="margin-left: 110px;">
+
+							{% for i in range(prev_uploads|count) %}
+							{% if prev_uploads[i].processed %}
+							<br>
+							<ul class="level_1">
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="checkfile{{ i }}"
+										name="checkfile{{i}}"
+										onclick='showhide("checkfile{{ i }}","{{prev_uploads[i].processed_filename}}")'>
+									<label class="custom-control-label" for="checkfile{{i}}">Check this to select
+										file</label>
+								</div>
+
+								<div>
+									<h4 style="margin-bottom: 10px; margin-top: 10px;">
+										<a style="color: white;" href="/handanalysis/" id={{prev_uploads[i].filename}}
+											onclick="filename('{{prev_uploads[i].processed_filename}}')"
+											class='btn btn-success'>View Analysis Dashboard
+										</a>
+										<!--<button type="button" style="color: white;" id="" class="btn btn-success ha_class" filename="hh.txt">View Analysis Dashboard</button>-->
+									</h4>
+									<button type="button" class="btn btn-danger prev_upload_button">
+										<a style="color: white;" id={{prev_uploads[i].filename}} href="{{links[i]}}">
+											Download HH File
+										</a>
+									</button>
+									<button type="button" class="btn btn-danger prev_upload_button">
+										<a style="color: white;" id={{prev_uploads[i].filename}}
+											href="{{processed_links[i]}}"> Download Processed CSV Report
+										</a>
+									</button>
+									<h6 style="margin-top: 10px;">
+										{{total_processed_hands[i]
+										}} / {{total_hands[i]}} Hands Processed
+									</h6>
+
+									<h6 style="margin-top: 10px;">{{prev_uploads[i].upload_timestamp}} GMT</h6>
+								</div>
+							</ul>
+							{% else %}
+							<ul class="level_1">
+								<h4 style="margin-bottom: 10px; margin-top: 10px;">
+									Processing
+								</h4>
+								<h6 style="margin-top: 10px;">You will be notified via email when processing is finished
+								</h6>
+								<h6 style="margin-top: 10px;">{{prev_uploads[i].upload_timestamp}} GMT</h6>
+							</ul>
+							{% endif %}
+
+							{% endfor %}
+							{% else %}
+							<h3 style="color: white; text-align: center; margin-top: 50px; margin-left: 150px;">You
+								don't have any previous uploads.</h3>
+							{% endif %}
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="hr"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<script type="text/javascript" src="{{url_for('static', filename='hide.js')}}"></script>
+{% endblock %}

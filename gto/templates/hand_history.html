@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='upload.css')}}">
+<script type="text/javascript" src="/static/dragndrop.js"></script>
+<script type="text/javascript" src="/static/upload.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<section class="section" id="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2 col-md-2 col-sm-2 mobile-top-fix"></div>
+			<div class="col-lg-8 col-md-8 col-sm-8 mobile-top-fix">
+				<div style="text-align: center;">
+					<h1 style="color:white;">Upload Hand History</h1>
+				</div>
+				<div>
+					<div>
+						<div class="row">
+							<form method="POST" style="margin-left: auto; margin-right: auto;" class="upload-form"
+								enctype="multipart/form-data">
+								<div id="drop-area">
+									<div class="text_center">
+										<h3 style="color: white;">Drop here or select</h3>
+										<br>
+										<div class='svg-upload-container'>
+											<div id="icon" style='z-index:-10;margin-top:50px;'>
+												<i class="fa fa-upload fa-5x" aria-hidden="true">
+												</i>
+											</div>
+											<div id="upload"
+												style="margin-top:-150px;border:0.5px white dashed;border-radius:5px;">
+												<input type="file" name="file" id="file" multiple accept=".txt, .pdf"
+													onchange="handleFiles(this.files)" />
+											</div>
+										</div>
+										<p class="white_text" id="names"></p>
+										<p class="white_text" id="label_" style="font-size:20px;"> Hand History Format
+										</p>
+										<div class='white_text text_center btn-group btn-group-toggle toggle-hide'
+											data-toggle='buttons' style='margin-bottom:10px;'>
+											<label for="pokerstars" class='btn btn-danger active'>
+												<input type="radio" id="hhformat" name="hhformat" checked
+													autocomplete="off" value="pokerstars">
+												PokerStars
+											</label>
+											<label for="adda52" class='btn btn-danger'>
+												<input type="radio" id="hhformat" name="hhformat" autocomplete="off"
+													value="adda52">
+												Adda52
+											</label>
+											<label for="others" class='btn btn-danger'>
+												<input type="radio" id="hhformat" name="hhformat" autocomplete="off"
+													value="others">
+												Rush And Cash
+											</label>
+											<br>
+										</div>
+										<p class="white_text" id="label_" style="font-size:20px;"> Rake Structure</p>
+										<div class='white_text text_center btn-group btn-group-toggle toggle-hide'
+											data-toggle='buttons'>
+											<label for="plo50" class='btn btn-danger active'>
+												<input type="radio" id="plo50" name="rake_structure" checked
+													autocomplete="off" value="plo50">
+												PLO50
+											</label>
+											<label for="plo500" class='btn btn-danger'>
+												<input type="radio" id="plo50" name="rake_structure" autocomplete="off"
+													value="plo500">
+												PLO500
+											</label>
+											<br>
+										</div>
+										<div class="alert alert-success" style='margin-top:10px; margin-bottom:5px;'>
+											<button type="button" style="z-index:10000;" class="close"
+												data-dismiss="alert" onclick=delete_flash(this)>&times;</button>
+											To get help in choosing the right rake structure,
+											<br>
+											Visit the <a href="/faqs#rake_structure" style='color:inherit;'>FAQs
+												page</a>
+										</div>
+										<br>
+										{% if current_user.is_confirmed %}
+										<input style="margin-top:5px; width:100%;" type="submit" id="submit_files"
+											for="file" class="button btn btn-success" value="Upload" />
+										{% endif %}
+									</div>
+								</div>
+							</form>
+							{% if not current_user.is_confirmed %}
+							<form method="POST" action="{{url_for('send_confirm_link')}}"
+								style="margin-left: auto; margin-right: auto;" class="upload-form">
+								<p>
+									{{ confirm_email_form.hidden_tag() }}
+									{{ confirm_email_form.confirm_email(id="confirm_email", class="btn btn-danger") }}
+								</p>
+							</form>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 mobile-top-fix"></div>
+		</div>
+
+	</div>
+</section>
+
+
+
+
+
+{% endblock %}

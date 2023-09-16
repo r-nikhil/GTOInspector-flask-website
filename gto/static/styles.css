@@ -1,0 +1,303 @@
+:root {
+  --nav-bar-background:#202020;
+  --nav-bar-link:#E7DECD;
+  --nav-bar-active:#0A122A;
+  --nav-bar-visited:#E7DECD;
+  --nav-bar-active-background:#3BA293;
+  --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
+  --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
+  --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+  --omrs-color-interaction: #1e4bd1;
+  --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+  --omrs-color-danger: #b50706;
+  --omrs-color-bg-low-contrast: #eff1f2;
+  --omrs-color-ink-high-contrast: #121212;
+  --omrs-color-bg-high-contrast: #ffffff;
+  --base-container-color: #142934;
+  ;
+}
+
+html {
+  width:100vw;
+  overflow-x:hidden;
+  
+}
+
+
+.base_container{
+  background-color: #142934;
+  /* overflow-x: hidden; */
+}
+
+
+.logo{
+  color: white;
+  font-size: 8vw;
+}
+
+.top_nav{
+  width:100vw;
+  height: 150px;
+  font-size: 72px;
+  color: white;
+
+  background-color:#000F12;
+}
+.top_nav_subtitle {
+  font-size:24px;
+  margin-left:165px;
+}
+
+
+/* This is to fix 
+the login box in center*/
+
+body .column_center{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.column_center {
+  width: 50%;
+  text-align: center;
+  padding: 30px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 12px;
+  max-width: 400px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Text Input*/
+
+.text-center{
+  color:#000; 
+  text-transform:uppercase;
+  font-size: 23px;
+  margin: 10px 0 10px 0;
+  display: block;
+  text-align: center;
+}
+
+.text-center-white {
+  font-color:white;
+  text-align: center;
+}
+
+.box{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(0, 0, 0, 0.89);
+  border-radius:3px;
+  padding:70px 100px;
+}
+
+.input-container{
+  position:relative;
+  margin-bottom:25px;
+}
+
+.input-container label{
+  position:absolute;
+  top:0px;
+  left:0px;
+  font-size:16px;
+  color:rgb(255, 255, 255); 
+  pointer-event:none;
+  transition: all 0.5s ease-in-out;
+}
+
+.input-container input, .input-container textarea{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:rgb(255, 255, 255);
+}
+
+.input-container input:focus, .input-container textarea:focus { 
+ border:none; 
+ outline:none;
+ border-bottom:1px solid #e74c3c; 
+}
+
+
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label,
+.input-container textarea:focus ~ label,
+.input-container textarea:valid ~ label{
+  top:-12px;
+  font-size:12px;
+  
+}
+
+#drop-area {
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  width: 480px;
+  font-family: sans-serif;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+#drop-area.highlight {
+  border-color: purple;
+}
+
+
+.my-form {
+  margin-bottom: 10px;
+}
+
+#gallery {
+  margin-top: 10px;
+}
+
+#gallery img {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
+.jumbotron{
+  background-color: #555;
+  color:black;
+  text-align: center;
+  font-size: 36px;
+}
+
+/*email and password color 
+adjustment for the login page*/
+.email{
+  color: #555;
+}
+.password{
+  color: #555555;
+}
+
+/*created a class for signup page
+named- signup_form to adjust 
+the form layout*/
+
+.signup_form{
+  margin: auto;
+  margin-top: 20px;
+  
+  border: 2px #555;
+  border-style: dashed;
+  border-radius: 12px;
+  
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: fit-content;
+  min-height: 400px;
+  
+}
+
+
+
+.signup_form label{
+  font-size: 14px;
+}
+.signup_form input, .signup_form textarea{
+  width: 100%;
+  
+}
+
+.signup_form .checkbox, p{
+ margin-top: 20px;
+}
+
+#file{
+  height: 300px;
+}
+
+/*This is for the payment page*/
+.submit_ {
+  border-radius: 5px;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 30px ;
+
+}
+
+/*select_plan*/
+
+#label_hand{
+  border-radius: 8px;
+}
+
+#label_hand:hover{
+  background-color: #fcbf49 ;
+}
+
+
+/*animation css code for 
+the alert msg*/
+
+#alert_box{
+  width: 20%;
+  display: flex;
+  position: absolute;
+  right: 10px;
+  margin-top: 200px;
+  z-index: 1000;
+  -webkit-animation: seconds 1.0s forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 5s;
+  animation: seconds 1.0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 5s;
+}
+
+@-webkit-keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;  
+  }
+  100%{
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;  
+  }
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+#alert_box .close{
+  margin-right: 15px;
+  z-index: 50000;
+}
+
+
+.page_content_wrapper {
+  margin-bottom:100px;
+}
+
+.white-box {
+  border:3px white;
+}

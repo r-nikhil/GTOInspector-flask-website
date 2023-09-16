@@ -1,0 +1,15 @@
+{% extends 'faqs/simple_qa_template.html' %}
+{% block question %}
+	<p>
+		How to choose rake structure?
+	</p>
+{% endblock %}
+{% block answer %}
+	<p id="q7">
+		Rake has a major impact on low-stakes poker profitability. It is the driving force dictating which few players are winners. But since we don't generally have the option to play rake-free, all we can do is to try to play an optimal strategy so that we don’t lose the majority of our winrate to rake. 
+		<br>
+		Currently all our GTO ranges are adjusted for two rake structures. PLO50 and PLO500 from pokerstars.com. You can view the exact rake structure here: https://www.pokerstars.com/poker/room/rake/
+		<br>
+		For comparison to an Indian site like Adda52, PLO500 would be the apt choice for players analysing hands above 200/400INR. For everything below those stakes PLO50 would be suitable.
+	</p>
+{% endblock %}

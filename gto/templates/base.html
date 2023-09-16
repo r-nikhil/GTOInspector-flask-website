@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+	<head>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-N69Q6FV');</script>
+		<!-- End Google Tag Manager -->
+
+
+		<!-- x-icon -->
+
+		<link rel="shortcut icon" href="{{url_for('static', filename='logo.png')}}" type="image/x-icon">
+
+		<!-- meta tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="utf-8">
+		<meta name="description" content="Perfect your poker game with GTO Inspector. Find out if your game is GTO approved and fix your leaks at lightning speed. Supports PokerStars, GG Poker and Adda52 Hand History.">
+		<meta name="keywords" content="GTO, GTO Inspector, Poker, Trainer, Optimize, PokerStars, Adda, Adda52, PLO, GGPoker, Hand History, Solver, Post Game Analysis, Solver Approved, Monker, Monkey Approved, Omaha, Pot Limit Omaha, HH Processing, GTO Dashboard, EV, GTO EV, HH Upload, HH Analysis">
+		<meta name="author" content="Kunal Agarwal, Nikhil R">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+    	<meta name="MobileOptimized" content="320">
+    	<meta property="og:type" content="website">
+    	<meta property="og:url" content="https://www.gtoinspector.poker">
+    	<meta property="og:title" content="GTO Inspector">
+    	<meta property="og:description" content="Perfect your poker game with GTO Inspector. Find out if your game is GTO approved and fix your leaks at lightning speed. Supports PokerStars, GG Poker and Adda52 Hand History.">
+    	<meta property="og:site_name" content="GTO Inspector">
+    	<meta property="og:locale" content="en_US">
+    	<meta itemprop="name" content="GTO Inspector">
+    	<meta itemprop="description" content="Perfect your poker game with GTO Inspector. Find out if your game is GTO approved and fix your leaks at lightning speed. Supports PokerStars, GG Poker and Adda52 Hand History.">
+    	
+		<!-- javascript imports -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-B47ZNN3SCB"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-B47ZNN3SCB');
+		</script>
+		<link rel="stylesheet" type="text/css" href="static/styles.css">
+		<!-- custom imports template -->
+		<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="static/css/flex-slider.css">
+		<link rel="stylesheet" type="text/css" href="static/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="static/css/owl-carousel.css">
+		<link rel="stylesheet" type="text/css" href="static/css/templatemo-art-factory.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/flex-slider.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/owl-carousel.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/templatemo-art-factory.css">
+		<!-- end imports -->
+		
+		<style type="text/css">
+		body {
+			position: relative;
+		}
+		.nav { min-height: 7vh; }
+		.section { min-height: 93vh; }
+		.footer { min-height: 7vh; }
+		.site-title .logo {
+		max-width: 100% !important;
+		height:140px;
+		margin-top:5px;
+		margin-left:5px;
+		max-height: 200px !important;
+		}
+		</style>
+		<title>{{ title }} - GTO Inspector</title>
+	</head>
+	
+	<body>
+		{% include 'navbar.html' %}
+		<div >
+			<!-- Google Tag Manager (noscript) -->
+			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N69Q6FV"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+			<!-- End Google Tag Manager (noscript) -->
+			{% for message in get_flashed_messages() %}
+				<div class="alert alert-success" id="alert_box">
+					{{ message }}
+				</div>
+			{% endfor %}
+			{% block content%}
+			{% endblock %}
+		</div>
+		
+		{% include 'footer.html' %}
+	</body>
+	
+	<script type="text/javascript">
+		function delete_flash(flash){
+			$(flash).parent().remove()
+		}
+	</script>
+	<script type="text/javascript" id="cookieinfo"
+	src="//cookieinfoscript.com/js/cookieinfo.min.js"
+	data-bg="#645862"
+	data-fg="#FFFFFF"
+	data-link="#F1D600"
+	data-cookie="CookieInfoScript"
+	data-text-align="left"
+	data-close-text="Got it!">
+	</script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="static/js/jquery-2.1.0.min.js"></script>
+	<!-- Bootstrap -->
+	<script type="text/javascript" src="static/js/popper.js"></script>
+	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+	<!-- Plugins -->
+	<script type="text/javascript" src="static/js/owl-carousel.js"></script>
+	<script type="text/javascript" src="static/js/scrollreveal.min.js"></script>
+	<script type="text/javascript" src="static/js/waypoints.min.js"></script>
+	<script type="text/javascript" src="static/js/jquery.counterup.min.js"></script>
+	<script type="text/javascript" src="static/js/imgfix.min.js"></script>
+	<!-- Global Init -->
+	<script type="text/javascript" src="static/js/custom.js"></script>
+</html>

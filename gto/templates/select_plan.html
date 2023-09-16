@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{%block content%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='login.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='bm-needed.css')}}">
+<style type="text/css">
+	.top-margin {
+		margin-top:30px;
+	}
+	#btn-container {
+		margin-top:60px;
+	}
+	#about {
+		padding-bottom:30px;
+	}
+	li {
+		font-size:18px;
+		text-align:left;
+		margin-top:8px;
+		margin-bottom:8px;
+	}
+	.pricing-ul {
+	list-style: none; /* Remove default bullets */
+	}
+	.pricing-ul li::before {
+	content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: white; /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+	display: inline-block; /* Needed to add space between the bullet and the text */
+	width: 1em; /* Also needed for space (tweak if needed) */
+	margin-left: -1em; /* Also needed for space (tweak if needed) */
+	}
+	.strikethrough {
+	position: relative;
+	}
+	.strikethrough:before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 50%;
+	right: 0;
+	border-top: 3px solid;
+	border-color: var(--plum-accent);
+	-webkit-transform:rotate(-10deg);
+	-moz-transform:rotate(-10deg);
+	-ms-transform:rotate(-10deg);
+	-o-transform:rotate(-10deg);
+	transform:rotate(-10deg);
+	}
+	.fa-discord {
+		content:"\f392";
+	}
+	.links a {
+		margin-left:10px;
+		margin-right:10px;
+	}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+<div class="slidecontainer">
+	<form method="POST">
+		<section class="section" id="about">
+			<div class="container">
+				<div class="row">
+					<div style="margin-bottom:20px;">
+						* Introductory Offer: 80% off for Beta version
+					</div>
+					<div class="owl-carousel owl-theme">
+						<div class="item service-item">
+							<div class="icon">
+								<i><img src="assets/images/service-icon-01.png" alt=""></i>
+							</div>
+							<h5 class="service-title">Recreational</h5>
+							<ul class="pricing-ul">
+								<li>Processing up to 20k hands per month</li>
+								<li>Automated Hand History Checkup and alerts for every 700 hands
+									<sup>
+									(Upcoming)
+									</sup>
+								</li>
+								<b>
+								<li>Cost &nbsp;<span class="strikethrough">$ 35</span>&nbsp; &nbsp;$6.99*</li>
+								</b>
+							</ul>
+							{# <a href="#" class="main-button">Read More</a> #}
+						</div>
+						<div class="item service-item">
+							<div class="icon">
+								<i><img src="assets/images/service-icon-02.png" alt=""></i>
+							</div>
+							<h5 class="service-title">Regular</h5>
+							<ul class="pricing-ul">
+								<li>Processing up to 30k hands per month</li>
+								<li>Automated Hand History Checkup and alerts for every 1k hands
+									<sup>
+									(Upcoming)
+									</sup>
+								</li>
+								<b>
+								<li>Cost &nbsp;<span class="strikethrough">$49</span> &nbsp;&nbsp;$9.99*</li>
+								</b>
+							</ul>
+							{# <a href="#" class="main-button">Discover More</a> #}
+						</div>
+						<div class="item service-item">
+							<div class="icon">
+								<i><img src="assets/images/service-icon-02.png" alt=""></i>
+							</div>
+							<h5 class="service-title">Professional</h5>
+							<ul class="pricing-ul">
+								<li>Processing up to 80k hands per month</li>
+								<li>Automated Hand History Checkup and alerts for every 3k hands
+									<sup>
+									(Upcoming)
+									</sup>
+								</li>
+								<b>
+								<li>Cost &nbsp;<span class="strikethrough">$99</span> &nbsp;&nbsp;$19.99*</li>
+								</b>
+							</ul>
+							{# <a href="#" class="main-button">Discover More</a> #}
+						</div>
+					</div>
+					<div class="links" 
+					style="
+					margin-top:20px;
+					text-align:left;
+					margin-left:auto;
+					margin-right:auto;
+					"
+					>
+						<p style="font-size:20px;margin-bottom: -5px; text-align:center;">Contact us to purchase</p>
+						<a href="skype:gtoinspector.poker@gmail.com?chat" style="font-size:40px;">
+							<i class="fa fa-skype"></i>
+						</a>
+						<a href="https://discord.gg/NNQArPCSzs" style="font-size:40px;">
+							<i class="fa fa-discord"></i>
+						</a>
+						<a href="#" style="font-size:40px;">
+							<i class="fa fa-telegram" aria-hidden="true"></i>
+						</a>
+						<a href="mailto:gtoinspector.poker@gmail.com" style="font-size:40px;">
+							<i class="fa fa-envelope"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</form>
+</div>
+{% endblock %}
